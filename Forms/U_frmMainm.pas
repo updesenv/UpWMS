@@ -59,6 +59,7 @@ end;
 procedure TfrmMainm.btnWMSClick(Sender: TObject);
 begin
   U_frmWMS.frmWMS.Show(nil);
+  U_frmWMS.frmWMS.edtCodBarras.SetFocus;
 end;
 
 initialization

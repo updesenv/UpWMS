@@ -2,7 +2,7 @@ object UniServerModule: TUniServerModule
   OldCreateOrder = False
   AutoCoInitialize = True
   TempFolder = 'temp\'
-  Title = 'UpSoftware WMS'
+  Title = 'MyUp Mobile'
   Favicon.Data = {
     000001000100271F000001002000041400001600000028000000270000003E00
     00000100200000000000E4120000C20E0000C20E000000000000000000004436
