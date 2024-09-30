@@ -2,8 +2,8 @@ object frmMainm: TfrmMainm
   AlignWithMargins = True
   Left = 0
   Top = 0
-  ClientHeight = 900
-  ClientWidth = 384
+  ClientHeight = 593
+  ClientWidth = 360
   Caption = 'Menu'
   Icon.Data = {
     0000010001008E790000010020001416010016000000280000008E000000F200
@@ -2233,8 +2233,6 @@ object frmMainm: TfrmMainm
     0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0000FFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFC0000}
   Color = clTeal
-  AlignmentControl = uniAlignmentClient
-  AutoHeight = False
   TitleColor = clTeal
   TitleFontColor = clWhite
   CloseButton.Visible = False
@@ -2243,29 +2241,29 @@ object frmMainm: TfrmMainm
   PixelsPerInch = 96
   TextHeight = 13
   ScrollPosition = 0
-  ScrollHeight = 94
+  ScrollHeight = 47
   PlatformData = {}
   object uniPanelPrincipal: TUnimContainerPanel
     Left = 0
     Top = 0
-    Width = 384
-    Height = 900
+    Width = 360
+    Height = 593
     Hint = ''
     Align = alClient
     object uniPanelCima: TUnimContainerPanel
       Left = 0
       Top = 0
-      Width = 384
+      Width = 360
       Height = 49
       Hint = ''
       Align = alTop
       Color = clTeal
     end
     object uniPanelDireita: TUnimContainerPanel
-      Left = 328
+      Left = 304
       Top = 49
       Width = 56
-      Height = 611
+      Height = 304
       Hint = ''
       Align = alRight
       Color = clTeal
@@ -2274,7 +2272,7 @@ object frmMainm: TfrmMainm
       Left = 0
       Top = 49
       Width = 57
-      Height = 611
+      Height = 304
       Hint = ''
       Align = alLeft
       Color = clTeal
@@ -2282,25 +2280,25 @@ object frmMainm: TfrmMainm
     object uniPanelCentral: TUnimContainerPanel
       Left = 57
       Top = 49
-      Width = 271
-      Height = 611
+      Width = 247
+      Height = 304
       Hint = ''
       Align = alClient
       object btnWMS: TUnimBitBtn
         Left = 0
         Top = 0
-        Width = 271
+        Width = 247
         Height = 47
         Hint = ''
         Align = alTop
         UI = 'round'
-        Caption = 'WMS'
+        Caption = 'CodeBar'
         OnClick = btnWMSClick
       end
       object lblSeparador1: TUnimLabel
         Left = 0
         Top = 47
-        Width = 271
+        Width = 247
         Height = 33
         Hint = ''
         AutoSize = False
@@ -2313,18 +2311,18 @@ object frmMainm: TfrmMainm
       object btnOutro: TUnimBitBtn
         Left = 0
         Top = 80
-        Width = 271
+        Width = 247
         Height = 47
         Hint = ''
         Align = alTop
         UI = 'round'
-        Caption = '...'
+        Caption = 'Pagamentos'
       end
     end
     object uniPanelBaixo: TUnimContainerPanel
       Left = 0
-      Top = 660
-      Width = 384
+      Top = 353
+      Width = 360
       Height = 240
       Hint = ''
       Align = alBottom

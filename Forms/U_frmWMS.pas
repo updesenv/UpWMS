@@ -13,7 +13,6 @@ type
   TfrmWMS = class(TUnimForm)
     uniPanelPrincipal: TUnimContainerPanel;
     uniPanelCima: TUnimContainerPanel;
-    uniPanelBaixo: TUnimContainerPanel;
     uniPanelDireita: TUnimContainerPanel;
     uniPanelEsquerda: TUnimContainerPanel;
     uniPanelCentral: TUnimContainerPanel;
@@ -40,6 +39,7 @@ type
     edtProduto: TUnimEdit;
     lblProduto: TUnimLabel;
     UnimLabel1: TUnimLabel;
+    lblSeparador7: TUnimLabel;
     procedure UnimFormShow(Sender: TObject);
     procedure edtCodBarrasExit(Sender: TObject);
     procedure btnNovaBuscaClick(Sender: TObject);
@@ -51,7 +51,11 @@ type
     procedure ControlaCmampos(visible:Boolean);
     procedure ConsultaEtiqueta(etiqueta:String);
     procedure ZeraCampos();
+    procedure ZeraTela();
   end;
+
+var
+  codBarras: String;
 
 function frmWMS: TfrmWMS;
 
@@ -71,13 +75,27 @@ end;
 
 procedure TfrmWMS.btnNovaBuscaClick(Sender: TObject);
 begin
-  ZeraCampos();
-  ControlaCmampos(false);
+  ZeraTela();
 end;
 
 procedure TfrmWMS.btnValidarClick(Sender: TObject);
 begin
   // POST DOS DADOS NOVO
+  with dmWMS.adoprcAlteracaoEtiquetaDinamica do
+  begin
+    Close;
+    Parameters.ParamByName('@QTD').Value                            := StrToFloat(edtQtd.Text);
+    Parameters.ParamByName('@PESO').Value                           := StrToFloat(edtPesoBruto.Text);
+    Parameters.ParamByName('@LOTE_FORN').Value                      := edtLoteFornecedor.Text;
+    Parameters.ParamByName('@USUARIO_ALTERACAO_DINAMICA').Value     := 'UPSOFTWARE';
+    Parameters.ParamByName('@ETIQUETA').Value                        := codBarras;
+    Parameters.ParamByName('@FABRICACAO').Value                     := dtFabricacao.Date;
+    Parameters.ParamByName('@VALIDADE').Value                       := dtValidade.Date;
+    Parameters.ParamByName('@DT_ALTERACAO_DINAMICA').Value          := Now();
+    ExecProc;
+  end;
+
+  ZeraTela();
 
   swtAlerta.Title            := 'Atenção';
   swtAlerta.InputType        := ItNone;
@@ -85,7 +103,6 @@ begin
   swtAlerta.ShowCancelButton := False;
   swtAlerta.Show('Etiqueta validada!') ;
 
-  btnNovaBuscaClick(Self);
 end;
 
 procedure TfrmWMS.ConsultaEtiqueta(etiqueta: String);
@@ -101,11 +118,13 @@ begin
   begin
     ControlaCmampos(true);
 
+    codBarras := etiqueta;
+
     //qtd
-    edtQtd.Text :=  dmWMS.adodtsEtiquetaQTD.AsString;
+    edtQtd.Text :=  FormatFloat('0.000', dmWMS.adodtsEtiquetaQTD.AsFloat);
 
     //peso bruto
-    edtPesoBruto.Text :=  dmWMS.adodtsEtiquetaPESO.AsString;
+    edtPesoBruto.Text :=  FormatFloat('0.000', dmWMS.adodtsEtiquetaPESO.AsFloat);
 
     //fabricaçao
     dtFabricacao.Date :=  dmWMS.adodtsEtiquetaDT_FABRIC.AsDateTime;
@@ -121,14 +140,14 @@ begin
   end
   else
   begin
-    edtCodBarras.SetFocus;
-    btnNovaBuscaClick(Self);
+    ZeraTela();
 
     swtAlerta.Title            := 'Atenção';
     swtAlerta.InputType        := ItNone;
     swtAlerta.AlertType        := atInfo;
     swtAlerta.ShowCancelButton := False;
     swtAlerta.Show('Nenhuma etiqueta localizada!') ;
+
   end;
 
 end;
@@ -136,7 +155,6 @@ end;
 procedure TfrmWMS.ControlaCmampos(visible: Boolean);
 begin
 
-  edtCodBarras.SetFocus;
   edtCodBarras.Enabled := not visible;
   btnNovaBusca.Visible := visible;
   btnValidar.Visible := visible;
@@ -170,11 +188,13 @@ end;
 
 procedure TfrmWMS.edtCodBarrasExit(Sender: TObject);
 begin
-  ConsultaEtiqueta(edtCodBarras.Text);
+  if edtCodBarras.Text <> '' then
+    ConsultaEtiqueta(edtCodBarras.Text);
 end;
 
 procedure TfrmWMS.UnimFormShow(Sender: TObject);
 begin
+  edtCodBarras.SetFocus;
   ControlaCmampos(false);
 end;
 
@@ -187,6 +207,13 @@ begin
     dtValidade.Date :=  Now();
     edtLoteFornecedor.Text :=  '';
     edtProduto.Text :=  '';
+end;
+
+procedure TfrmWMS.ZeraTela;
+begin
+  edtCodBarras.SetFocus;
+  ZeraCampos();
+  ControlaCmampos(false);
 end;
 
 end.

@@ -2,12 +2,10 @@ object frmLogin: TfrmLogin
   AlignWithMargins = True
   Left = 0
   Top = 0
-  ClientHeight = 900
-  ClientWidth = 406
-  Caption = 'UpSoftware WMS'
+  ClientHeight = 593
+  ClientWidth = 360
+  Caption = 'MyUp Mobile'
   Color = clTeal
-  AlignmentControl = uniAlignmentClient
-  AutoHeight = False
   TitleColor = clTeal
   TitleFontColor = clWhite
   CloseButton.Visible = False
@@ -22,40 +20,48 @@ object frmLogin: TfrmLogin
   object uniPanelPrincipal: TUnimContainerPanel
     Left = 0
     Top = 0
-    Width = 406
-    Height = 900
+    Width = 360
+    Height = 593
     Hint = ''
     Align = alClient
     Color = clTeal
+    ExplicitWidth = 406
+    ExplicitHeight = 900
     object uniPanelCima: TUnimContainerPanel
       Left = 0
       Top = 0
-      Width = 406
+      Width = 360
       Height = 49
       Hint = ''
       Align = alTop
       Color = clTeal
+      ExplicitWidth = 406
     end
     object uniPanelDireita: TUnimContainerPanel
-      Left = 350
+      Left = 304
       Top = 49
       Width = 56
-      Height = 706
+      Height = 398
       Hint = ''
       Align = alRight
       Color = clTeal
+      ExplicitLeft = 350
+      ExplicitHeight = 706
     end
     object uniPanelCentral: TUnimContainerPanel
       Left = 49
       Top = 49
-      Width = 301
-      Height = 706
+      Width = 255
+      Height = 398
       Hint = ''
       Align = alClient
+      Color = clTeal
+      ExplicitWidth = 301
+      ExplicitHeight = 706
       object lblUsuario: TUnimLabel
         Left = 0
         Top = 0
-        Width = 301
+        Width = 255
         Height = 23
         Hint = ''
         AutoSize = False
@@ -64,22 +70,24 @@ object frmLogin: TfrmLogin
         ParentFont = False
         Font.Color = clWhite
         Font.Style = [fsBold]
+        ExplicitWidth = 301
       end
       object edtUsuario: TUnimEdit
         Left = 0
         Top = 23
-        Width = 301
+        Width = 255
         Height = 38
         Hint = ''
         Align = alTop
         Text = ''
         ParentFont = False
         TabOrder = 1
+        ExplicitWidth = 301
       end
       object c: TUnimLabel
         Left = 0
         Top = 61
-        Width = 301
+        Width = 255
         Height = 33
         Hint = ''
         AutoSize = False
@@ -88,11 +96,12 @@ object frmLogin: TfrmLogin
         ParentFont = False
         Font.Color = clBtnFace
         Font.Style = [fsBold]
+        ExplicitWidth = 301
       end
       object lblSenha: TUnimLabel
         Left = 0
         Top = 94
-        Width = 301
+        Width = 255
         Height = 27
         Hint = ''
         AutoSize = False
@@ -101,47 +110,53 @@ object frmLogin: TfrmLogin
         ParentFont = False
         Font.Color = clWhite
         Font.Style = [fsBold]
+        ExplicitWidth = 301
       end
       object edtSenha: TUnimEdit
         Left = 0
         Top = 121
-        Width = 301
+        Width = 255
         Height = 38
         Hint = ''
         Align = alTop
         Text = ''
         ParentFont = False
         TabOrder = 2
+        ExplicitWidth = 301
       end
       object btnLogin: TUnimBitBtn
         Left = 0
-        Top = 659
-        Width = 301
+        Top = 351
+        Width = 255
         Height = 47
         Hint = ''
         Align = alBottom
         UI = 'round'
         Caption = 'Entrar'
         OnClick = btnLoginClick
+        ExplicitTop = 659
+        ExplicitWidth = 301
       end
     end
     object uniPanelEsquerda: TUnimContainerPanel
       Left = 0
       Top = 49
       Width = 49
-      Height = 706
+      Height = 398
       Hint = ''
       Align = alLeft
       Color = clTeal
+      ExplicitHeight = 706
     end
     object uniPanelBaixo: TUnimContainerPanel
       Left = 0
-      Top = 755
-      Width = 406
-      Height = 145
+      Top = 447
+      Width = 360
+      Height = 146
       Hint = ''
       Align = alBottom
       Color = clTeal
+      ExplicitTop = 393
     end
   end
   object swtAlerta: TUniSweetAlert
