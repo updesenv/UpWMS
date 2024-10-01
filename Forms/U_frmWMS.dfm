@@ -15,12 +15,12 @@ object frmWMS: TfrmWMS
   TitleButtons = <>
   PixelsPerInch = 96
   TextHeight = 13
-  ScrollPosition = 301
+  ScrollPosition = 50
   ScrollHeight = 947
   PlatformData = {}
   object uniPanelPrincipal: TUnimContainerPanel
     Left = 0
-    Top = -301
+    Top = -50
     Width = 343
     Height = 900
     Hint = ''
@@ -33,18 +33,6 @@ object frmWMS: TfrmWMS
       Hint = ''
       Align = alTop
       Color = clTeal
-      ExplicitWidth = 360
-    end
-    object uniPanelDireita: TUnimContainerPanel
-      Left = 279
-      Top = 73
-      Width = 64
-      Height = 827
-      Hint = ''
-      Align = alRight
-      Color = clTeal
-      ExplicitLeft = 282
-      ExplicitTop = 145
     end
     object uniPanelEsquerda: TUnimContainerPanel
       Left = 0
@@ -54,7 +42,15 @@ object frmWMS: TfrmWMS
       Hint = ''
       Align = alLeft
       Color = clTeal
-      ExplicitHeight = 829
+    end
+    object uniPanelDireita: TUnimContainerPanel
+      Left = 279
+      Top = 73
+      Width = 64
+      Height = 827
+      Hint = ''
+      Align = alRight
+      Color = clTeal
     end
     object uniPanelCentral: TUnimContainerPanel
       AlignWithMargins = True
@@ -64,8 +60,6 @@ object frmWMS: TfrmWMS
       Height = 821
       Hint = ''
       Align = alClient
-      ExplicitWidth = 225
-      ExplicitHeight = 823
       object edtCodBarras: TUnimEdit
         Left = 0
         Top = 0
@@ -77,7 +71,6 @@ object frmWMS: TfrmWMS
         ParentFont = False
         TabOrder = 0
         OnExit = edtCodBarrasExit
-        ExplicitWidth = 225
       end
       object lblSeparador1: TUnimLabel
         Left = 0
@@ -104,8 +97,6 @@ object frmWMS: TfrmWMS
         ParentFont = False
         Font.Color = clWhite
         Font.Style = [fsBold]
-        ExplicitTop = 105
-        ExplicitWidth = 225
       end
       object edtProduto: TUnimEdit
         Tag = 1
@@ -120,8 +111,6 @@ object frmWMS: TfrmWMS
         ParentFont = False
         ReadOnly = True
         TabOrder = 1
-        ExplicitTop = 128
-        ExplicitWidth = 225
       end
       object UnimLabel1: TUnimLabel
         Left = 0
@@ -148,8 +137,6 @@ object frmWMS: TfrmWMS
         ParentFont = False
         Font.Color = clWhite
         Font.Style = [fsBold]
-        ExplicitTop = 201
-        ExplicitWidth = 225
       end
       object edtQtd: TUnimEdit
         Left = 0
@@ -161,8 +148,6 @@ object frmWMS: TfrmWMS
         Text = ''
         ParentFont = False
         TabOrder = 2
-        ExplicitTop = 224
-        ExplicitWidth = 225
       end
       object lblSeparador2: TUnimLabel
         Left = 0
@@ -189,8 +174,6 @@ object frmWMS: TfrmWMS
         ParentFont = False
         Font.Color = clWhite
         Font.Style = [fsBold]
-        ExplicitTop = 297
-        ExplicitWidth = 225
       end
       object edtPesoBruto: TUnimEdit
         Left = 0
@@ -202,8 +185,6 @@ object frmWMS: TfrmWMS
         Text = ''
         ParentFont = False
         TabOrder = 3
-        ExplicitTop = 320
-        ExplicitWidth = 225
       end
       object lblSeparador3: TUnimLabel
         Left = 0
@@ -230,8 +211,6 @@ object frmWMS: TfrmWMS
         ParentFont = False
         Font.Color = clWhite
         Font.Style = [fsBold]
-        ExplicitTop = 393
-        ExplicitWidth = 225
       end
       object dtFabricacao: TUnimDatePicker
         Left = 0
@@ -242,8 +221,6 @@ object frmWMS: TfrmWMS
         Align = alTop
         DateFormat = 'dd/MM/yyyy'
         Date = 45561.000000000000000000
-        ExplicitTop = 416
-        ExplicitWidth = 225
       end
       object lblSeparador4: TUnimLabel
         Left = 0
@@ -270,8 +247,6 @@ object frmWMS: TfrmWMS
         ParentFont = False
         Font.Color = clWhite
         Font.Style = [fsBold]
-        ExplicitTop = 489
-        ExplicitWidth = 225
       end
       object dtValidade: TUnimDatePicker
         Left = 0
@@ -282,8 +257,6 @@ object frmWMS: TfrmWMS
         Align = alTop
         DateFormat = 'dd/MM/yyyy'
         Date = 45561.000000000000000000
-        ExplicitTop = 512
-        ExplicitWidth = 225
       end
       object lblSeparador5: TUnimLabel
         Left = 0
@@ -310,8 +283,6 @@ object frmWMS: TfrmWMS
         ParentFont = False
         Font.Color = clWhite
         Font.Style = [fsBold]
-        ExplicitTop = 585
-        ExplicitWidth = 225
       end
       object edtLoteFornecedor: TUnimEdit
         Left = 0
@@ -323,8 +294,6 @@ object frmWMS: TfrmWMS
         Text = ''
         ParentFont = False
         TabOrder = 4
-        ExplicitTop = 608
-        ExplicitWidth = 225
       end
       object lblSeparador6: TUnimLabel
         Left = 0
@@ -338,8 +307,6 @@ object frmWMS: TfrmWMS
         ParentFont = False
         Font.Color = clBtnFace
         Font.Style = [fsBold]
-        ExplicitLeft = -3
-        ExplicitTop = 874
       end
       object btnValidar: TUnimBitBtn
         Left = 0
@@ -385,8 +352,6 @@ object frmWMS: TfrmWMS
           FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00}
         Caption = 'Validar'
         OnClick = btnValidarClick
-        ExplicitTop = 703
-        ExplicitWidth = 225
       end
       object lblSeparador7: TUnimLabel
         Left = 0
@@ -400,7 +365,6 @@ object frmWMS: TfrmWMS
         ParentFont = False
         Font.Color = clBtnFace
         Font.Style = [fsBold]
-        ExplicitLeft = 3
       end
       object btnNovaBusca: TUnimBitBtn
         Left = 0
@@ -454,8 +418,6 @@ object frmWMS: TfrmWMS
           F60907F6FFFFFFFFFFFFFFFF08EDED070707F6FFFFFFFFFFFFFF}
         Caption = 'Nova Consulta'
         OnClick = btnNovaBuscaClick
-        ExplicitTop = 776
-        ExplicitWidth = 225
       end
     end
   end

@@ -22,6 +22,7 @@ type
     adodtsEtiquetaDT_VALIDADE: TDateTimeField;
     adodtsEtiquetaLOTE_FORN: TStringField;
     adoprcAlteracaoEtiquetaDinamica: TADOStoredProc;
+    adodtsEtiquetaDINAMICA_VALIDADA: TStringField;
   private
     { Private declarations }
   public
