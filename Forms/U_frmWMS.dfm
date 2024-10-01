@@ -148,6 +148,7 @@ object frmWMS: TfrmWMS
         Text = ''
         ParentFont = False
         TabOrder = 2
+        OnChange = edtQtdChange
       end
       object lblSeparador2: TUnimLabel
         Left = 0
@@ -185,6 +186,7 @@ object frmWMS: TfrmWMS
         Text = ''
         ParentFont = False
         TabOrder = 3
+        OnChange = edtPesoBrutoChange
       end
       object lblSeparador3: TUnimLabel
         Left = 0

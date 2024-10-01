@@ -44,6 +44,8 @@ type
     procedure edtCodBarrasExit(Sender: TObject);
     procedure btnNovaBuscaClick(Sender: TObject);
     procedure btnValidarClick(Sender: TObject);
+    procedure edtQtdChange(Sender: TObject);
+    procedure edtPesoBrutoChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -66,7 +68,7 @@ implementation
 {$R *.dfm}
 
 uses
-  MainModule, uniGUIApplication, dm_WMS;
+  MainModule, uniGUIApplication, dm_WMS , U_frmLogin;
 
 function frmWMS: TfrmWMS;
 begin
@@ -91,7 +93,7 @@ begin
     Parameters.ParamByName('@QTD').Value                            := StrToFloat(edtQtd.Text);
     Parameters.ParamByName('@PESO').Value                           := StrToFloat(edtPesoBruto.Text);
     Parameters.ParamByName('@LOTE_FORN').Value                      := edtLoteFornecedor.Text;
-    Parameters.ParamByName('@USUARIO_ALTERACAO_DINAMICA').Value     := 'UPSOFTWARE';
+    Parameters.ParamByName('@USUARIO_ALTERACAO_DINAMICA').Value     := U_frmLogin.usuarioSessao;
     Parameters.ParamByName('@ETIQUETA').Value                        := codBarras;
     Parameters.ParamByName('@FABRICACAO').Value                     := dtFabricacao.Date;
     Parameters.ParamByName('@VALIDADE').Value                       := dtValidade.Date;
@@ -246,6 +248,36 @@ procedure TfrmWMS.edtCodBarrasExit(Sender: TObject);
 begin
   if edtCodBarras.Text <> '' then
     ConsultaEtiqueta(edtCodBarras.Text);
+end;
+
+procedure TfrmWMS.edtPesoBrutoChange(Sender: TObject);
+var
+  InputText, FormattedText: string;
+  NumValue: Double;
+begin
+  InputText := TUnimEdit(Sender).Text;
+
+  if TryStrToFloat(InputText, NumValue) then
+  begin
+    FormattedText := FormatFloat('0.000', NumValue);
+
+    TUnimEdit(Sender).Text := FormattedText;
+  end;
+end;
+
+procedure TfrmWMS.edtQtdChange(Sender: TObject);
+var
+  InputText, FormattedText: string;
+  NumValue: Double;
+begin
+  InputText := TUnimEdit(Sender).Text;
+
+  if TryStrToFloat(InputText, NumValue) then
+  begin
+    FormattedText := FormatFloat('0.000', NumValue);
+
+    TUnimEdit(Sender).Text := FormattedText;
+  end;
 end;
 
 procedure TfrmWMS.UnimFormShow(Sender: TObject);

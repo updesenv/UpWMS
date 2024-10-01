@@ -25,8 +25,6 @@ object frmLogin: TfrmLogin
     Hint = ''
     Align = alClient
     Color = clTeal
-    ExplicitWidth = 406
-    ExplicitHeight = 900
     object uniPanelCima: TUnimContainerPanel
       Left = 0
       Top = 0
@@ -35,7 +33,6 @@ object frmLogin: TfrmLogin
       Hint = ''
       Align = alTop
       Color = clTeal
-      ExplicitWidth = 406
     end
     object uniPanelDireita: TUnimContainerPanel
       Left = 304
@@ -45,8 +42,6 @@ object frmLogin: TfrmLogin
       Hint = ''
       Align = alRight
       Color = clTeal
-      ExplicitLeft = 350
-      ExplicitHeight = 706
     end
     object uniPanelCentral: TUnimContainerPanel
       Left = 49
@@ -56,8 +51,6 @@ object frmLogin: TfrmLogin
       Hint = ''
       Align = alClient
       Color = clTeal
-      ExplicitWidth = 301
-      ExplicitHeight = 706
       object lblUsuario: TUnimLabel
         Left = 0
         Top = 0
@@ -70,7 +63,6 @@ object frmLogin: TfrmLogin
         ParentFont = False
         Font.Color = clWhite
         Font.Style = [fsBold]
-        ExplicitWidth = 301
       end
       object edtUsuario: TUnimEdit
         Left = 0
@@ -82,7 +74,6 @@ object frmLogin: TfrmLogin
         Text = ''
         ParentFont = False
         TabOrder = 1
-        ExplicitWidth = 301
       end
       object c: TUnimLabel
         Left = 0
@@ -96,7 +87,6 @@ object frmLogin: TfrmLogin
         ParentFont = False
         Font.Color = clBtnFace
         Font.Style = [fsBold]
-        ExplicitWidth = 301
       end
       object lblSenha: TUnimLabel
         Left = 0
@@ -110,7 +100,6 @@ object frmLogin: TfrmLogin
         ParentFont = False
         Font.Color = clWhite
         Font.Style = [fsBold]
-        ExplicitWidth = 301
       end
       object edtSenha: TUnimEdit
         Left = 0
@@ -122,7 +111,6 @@ object frmLogin: TfrmLogin
         Text = ''
         ParentFont = False
         TabOrder = 2
-        ExplicitWidth = 301
       end
       object btnLogin: TUnimBitBtn
         Left = 0
@@ -134,8 +122,6 @@ object frmLogin: TfrmLogin
         UI = 'round'
         Caption = 'Entrar'
         OnClick = btnLoginClick
-        ExplicitTop = 659
-        ExplicitWidth = 301
       end
     end
     object uniPanelEsquerda: TUnimContainerPanel
@@ -146,7 +132,6 @@ object frmLogin: TfrmLogin
       Hint = ''
       Align = alLeft
       Color = clTeal
-      ExplicitHeight = 706
     end
     object uniPanelBaixo: TUnimContainerPanel
       Left = 0
@@ -156,7 +141,6 @@ object frmLogin: TfrmLogin
       Hint = ''
       Align = alBottom
       Color = clTeal
-      ExplicitTop = 393
     end
   end
   object swtAlerta: TUniSweetAlert
