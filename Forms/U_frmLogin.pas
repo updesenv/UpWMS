@@ -32,6 +32,10 @@ type
     { Public declarations }
   end;
 
+var
+
+  usuarioSessao : String;
+
 function frmLogin: TfrmLogin;
 
 implementation
@@ -65,6 +69,7 @@ begin
 
   if (UpperCase(edtUsuario.Text) = usuario) and (UpperCase(edtSenha.Text)= senha) then
   begin
+    usuarioSessao := usuario;
     U_frmMainm.frmMainm.Show(nil);
   end;
 

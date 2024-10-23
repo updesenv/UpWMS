@@ -37,11 +37,11 @@ object dmWMS: TdmWMS
     CursorType = ctStatic
     CommandText = 
       'SELECT PROD.DESCRICAO,ETI.QTD,ETI.PESO,ETI.DT_FABRIC,ETI.DT_VALI' +
-      'DADE,ETI.LOTE_FORN FROM LG_CODEBAR_ETIQUETA ETI WITH(NOLOCK)'#13#10'IN' +
-      'NER JOIN LG_CODEBAR_UA UA WITH(NOLOCK) ON(ETI.COD_ETIQUETA = UA.' +
-      'COD_ETIQUETA_UF) '#13#10'INNER JOIN CE_PRODUTOS PROD WITH(NOLOCK) ON(E' +
-      'TI.COD_PROD = PROD.COD_PROD)'#13#10'WHERE COD_ETIQUETA = :@ETIQUETA AN' +
-      'D TIPO_OPERACAO = '#39'D'#39' AND DINAMICA_VALIDADA = '#39'N'#39
+      'DADE,ETI.LOTE_FORN,ETI.DINAMICA_VALIDADA FROM LG_CODEBAR_ETIQUET' +
+      'A ETI WITH(NOLOCK)'#13#10'INNER JOIN LG_CODEBAR_UA UA WITH(NOLOCK) ON(' +
+      'ETI.COD_ETIQUETA = UA.COD_ETIQUETA_UF) '#13#10'INNER JOIN CE_PRODUTOS ' +
+      'PROD WITH(NOLOCK) ON(ETI.COD_PROD = PROD.COD_PROD)'#13#10'WHERE COD_ET' +
+      'IQUETA = :@ETIQUETA AND TIPO_OPERACAO = '#39'D'#39
     Parameters = <
       item
         Name = '@ETIQUETA'
@@ -77,6 +77,11 @@ object dmWMS: TdmWMS
       FieldName = 'LOTE_FORN'
       Size = 200
     end
+    object adodtsEtiquetaDINAMICA_VALIDADA: TStringField
+      FieldName = 'DINAMICA_VALIDADA'
+      FixedChar = True
+      Size = 1
+    end
   end
   object dtsEtiqueta: TDataSource
     DataSet = adodtsEtiqueta
@@ -92,51 +97,60 @@ object dmWMS: TdmWMS
         DataType = ftInteger
         Direction = pdReturnValue
         Precision = 10
+        Value = Null
       end
       item
         Name = '@QTD'
         Attributes = [paNullable]
         DataType = ftBCD
         Precision = 18
+        Value = Null
       end
       item
         Name = '@PESO'
         Attributes = [paNullable]
         DataType = ftBCD
         Precision = 18
+        Value = Null
       end
       item
         Name = '@LOTE_FORN'
         Attributes = [paNullable]
         DataType = ftString
         Size = 255
+        Value = Null
       end
       item
         Name = '@USUARIO_ALTERACAO_DINAMICA'
         Attributes = [paNullable]
         DataType = ftString
         Size = 255
+        Value = Null
       end
       item
         Name = '@ETIQUETA'
         Attributes = [paNullable]
         DataType = ftString
         Size = 255
+        Value = Null
       end
       item
         Name = '@FABRICACAO'
         Attributes = [paNullable]
         DataType = ftDateTime
+        Value = Null
       end
       item
         Name = '@VALIDADE'
         Attributes = [paNullable]
         DataType = ftDateTime
+        Value = Null
       end
       item
         Name = '@DT_ALTERACAO_DINAMICA'
         Attributes = [paNullable]
         DataType = ftDateTime
+        Value = Null
       end>
     Left = 264
     Top = 24
